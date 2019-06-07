@@ -4,7 +4,7 @@ start:
 build:
 	docker-compose up -d
 	./permissions.sh
-	
+
 rebuild:
 	docker-compose down --volumes
 	sudo rm -rf ./wordpress
@@ -19,4 +19,9 @@ remove:
 
 stop:
 	docker-compose down --volumes
+
+reset-db:
+	docker-compose down --volumes
+	sudo rm -rf ./database
+	docker-compose up -d
 
